@@ -146,14 +146,12 @@ export default function TestimonialCard() {
             transition={{ duration: 0.6 }}
             className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
           >
-            <video 
-              src="/courses/testimonials1.mp4" 
-              controls 
-              preload="metadata"
-              className="w-full h-full object-cover"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              src="https://drive.google.com/file/d/17ULZNEm-1ZsqlFPUDy4KFmoL5WbbZmIa/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              allowFullScreen
+            ></iframe>
           </motion.div>
 
           <motion.div
@@ -163,14 +161,12 @@ export default function TestimonialCard() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
           >
-            <video 
-              src="/courses/testimonials2.mp4" 
-              controls 
-              preload="metadata"
-              className="w-full h-full object-cover"
-            >
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              src="https://drive.google.com/file/d/1l7c4tOnHaGlzF5DSQBPyzgkQ5vfehVaZ/preview"
+              className="w-full h-full"
+              allow="autoplay"
+              allowFullScreen
+            ></iframe>
           </motion.div>
         </div>
 
