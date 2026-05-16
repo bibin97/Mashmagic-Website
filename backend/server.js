@@ -10,6 +10,10 @@ const LMS_BACKEND_URL = process.env.LMS_BACKEND_URL || 'http://localhost:5000/ap
 app.use(cors());
 app.use(express.json());
 
+// Routes
+const testimonialRoutes = require('./api/testimonials');
+app.use('/api/testimonials', testimonialRoutes);
+
 // Proxy Login
 app.post('/api/auth/login', async (req, res) => {
     try {

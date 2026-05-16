@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactForm from "./ContactForm";
 import PremiumCard from "./PremiumCard";
+import { fetchTestimonials } from "../api/testimonials";
 
 const testimonials = [
   {
@@ -82,6 +83,15 @@ const TestimonialItem = ({ item, index }) => {
 
 export default function TestimonialCard() {
   const [showForm, setShowForm] = useState(false);
+  const [videoTestimonials, setVideoTestimonials] = useState([]);
+
+  useEffect(() => {
+    const loadVideos = async () => {
+      const data = await fetchTestimonials();
+      setVideoTestimonials(data);
+    };
+    loadVideos();
+  }, []);
 
   return (
     <section className="py-20 lg:py-28 bg-white overflow-hidden" id="testimonial">
@@ -139,35 +149,25 @@ export default function TestimonialCard() {
 
         {/* Area 3: Videos */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
-          >
-            <iframe
-              src="https://drive.google.com/file/d/17ULZNEm-1ZsqlFPUDy4KFmoL5WbbZmIa/preview"
-              className="w-full h-full"
-              allow="autoplay"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
-          >
-            <iframe
-              src="https://drive.google.com/file/d/1l7c4tOnHaGlzF5DSQBPyzgkQ5vfehVaZ/preview"
-              className="w-full h-full"
-              allow="autoplay"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
+          {videoTestimonials.map((video, index) => (
+            <motion.div
+              key={video.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
+            >
+              <video 
+                src={video.videoUrl} 
+                controls 
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </motion.div>
+          ))}
         </div>
 
         {/* CTA SECTION */}

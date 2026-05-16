@@ -25,3 +25,6 @@ dist-ssr
 
 # Large video files
 *.mp4
+
+# Environment variables
+backend/.env
