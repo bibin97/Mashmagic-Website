@@ -12,6 +12,7 @@ import {
   LayoutDashboard,
   MessageSquare
 } from "lucide-react";
+import { API_URL } from "../../api/config";
 
 export default function StudentDashboard() {
   const [user, setUser] = useState(null);
@@ -37,7 +38,7 @@ export default function StudentDashboard() {
 
   const fetchUpdates = async (token) => {
     try {
-      const response = await fetch("http://localhost:4000/api/student/my-updates", {
+      const response = await fetch(`${API_URL}/student/my-updates`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +62,7 @@ export default function StudentDashboard() {
     const token = localStorage.getItem("studentToken");
 
     try {
-      const response = await fetch("http://localhost:4000/api/student/daily-update", {
+      const response = await fetch(`${API_URL}/student/daily-update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

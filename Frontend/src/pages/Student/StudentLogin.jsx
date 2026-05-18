@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Lock, LogIn, ArrowRight } from "lucide-react";
+import { API_URL } from "../../api/config";
 
 export default function StudentLogin() {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export default function StudentLogin() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:4000/api/auth/login", {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
