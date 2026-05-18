@@ -68,7 +68,6 @@ export default function Footer() {
                 <span>
                   <strong className="text-white block mb-0.5">Kochi Office:</strong>
                   10/1744, 1st Floor, Suite #1012, Sowbhagya Building, Athani, Kakkanad, Kusumagiri P.O, Kochi – 682030
-                  <span className="text-xs text-[#f8ba2b] block mt-1 font-semibold">📞 7012-128756</span>
                 </span>
               </li>
             </ul>
