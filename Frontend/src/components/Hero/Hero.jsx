@@ -67,7 +67,7 @@ const Hero = () => {
               <span className="inline-block min-w-[120px] sm:min-w-[160px] md:min-w-[200px]">
                 <span ref={flipRef} className="text-black font-bold">First</span>
               </span>
-              <span className="text-[#008080] block sm:inline font-bold"> Mentoring-Based </span>
+              <span className="text-[#008080] block sm:inline font-bold"> Mentorship-Based </span>
               <span className="block text-black mt-2 font-bold">Learning Platform</span>
             </h1>
             <p className="text-gray-700 text-sm sm:text-base max-w-sm sm:max-w-md mx-auto md:mx-0">
@@ -80,7 +80,7 @@ const Hero = () => {
               >
                 BOOK FREE DEMO
               </button>
-              <p className="text-gray-600 text-xs sm:text-sm mt-2">30 Minute Session - Parent + Student</p>
+              <p className="text-gray-600 text-xs sm:text-sm mt-2">15 Minute Session - Parent + Student</p>
             </div>
             
             <div className="mt-2 sm:mt-8 flex flex-wrap justify-center md:justify-start gap-5 sm:gap-8">
@@ -98,7 +98,7 @@ const Hero = () => {
                    ))}
                 </div>
                 <span className="text-xl sm:text-3xl font-bold text-[#008080]">
-                  <span className="count">3700</span>+
+                  <span className="count">2000</span>+
                 </span>
                 <p className="text-black w-[200px] text-xs sm:text-sm font-medium mt-1">Trusted Parents</p>
               </div>

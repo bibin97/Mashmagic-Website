@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-gray-400 pt-24 pb-12 px-6 overflow-hidden relative">
+    <footer className="bg-[#002b2b] text-gray-300 pt-24 pb-12 px-6 overflow-hidden relative border-t border-[#008080]/20">
       {/* Decorative Blur */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#008080]/20 blur-[120px] rounded-full -mr-48 -mt-48" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#008080]/30 blur-[120px] rounded-full -mr-48 -mt-48" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           
           {/* COLUMN 1: BRAND */}
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="text-2xl font-black text-white mb-6 tracking-tight font-heading">
-              Mash <span className="text-[#008080]">Magic.</span>
+            <h3 style={{ color: 'white' }} className="text-2xl font-black text-white mb-6 tracking-tight font-heading">
+              Mash <span style={{ color: 'white' }} className="text-white">Magic.</span>
             </h3>
             <p className="text-sm leading-relaxed mb-8 text-gray-400">
               India’s premium mentoring-led learning platform. We empower students through personalized guidance, emotional support, and continuous tracking.
@@ -59,9 +59,21 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <span className="text-[#f8ba2b] mt-1">📍</span>
                 <span>
+                  <strong className="text-white block mb-1">Calicut Office:</strong>
                   First Floor, Old Bus Stand Bldg,<br />
                   Thamarassery, Calicut,<br />
                   Kerala - 673573
+                </span>
+              </li>
+              <li className="flex items-start gap-3 pt-3 border-t border-white/10">
+                <span className="text-[#f8ba2b] mt-1">📍</span>
+                <span>
+                  <strong className="text-white block mb-1">Kochi Office:</strong>
+                  10/1744, 1st Floor, Suite #1012,<br />
+                  Sowbhagya Building, Athani,<br />
+                  Kakkanad, Kusumagiri P.O,<br />
+                  Kochi – 682030<br />
+                  <span className="text-sm text-gray-400 block mt-1">📞 7012-128756</span>
                 </span>
               </li>
             </ul>

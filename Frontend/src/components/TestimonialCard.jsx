@@ -81,17 +81,19 @@ const TestimonialItem = ({ item, index }) => {
   );
 };
 
-export default function TestimonialCard() {
+export default function TestimonialCard({ showVideos = false }) {
   const [showForm, setShowForm] = useState(false);
   const [videoTestimonials, setVideoTestimonials] = useState([]);
 
   useEffect(() => {
-    const loadVideos = async () => {
-      const data = await fetchTestimonials();
-      setVideoTestimonials(data);
-    };
-    loadVideos();
-  }, []);
+    if (showVideos) {
+      const loadVideos = async () => {
+        const data = await fetchTestimonials();
+        setVideoTestimonials(data);
+      };
+      loadVideos();
+    }
+  }, [showVideos]);
 
   return (
     <section className="py-20 lg:py-28 bg-white overflow-hidden" id="testimonial">
@@ -148,27 +150,29 @@ export default function TestimonialCard() {
         </div>
 
         {/* Area 3: Videos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-          {videoTestimonials.map((video, index) => (
-            <motion.div
-              key={video.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
-            >
-              <video 
-                src={video.videoUrl} 
-                controls 
-                preload="metadata"
-                className="w-full h-full object-cover"
+        {showVideos && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+            {videoTestimonials.map((video, index) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
               >
-                Your browser does not support the video tag.
-              </video>
-            </motion.div>
-          ))}
-        </div>
+                <video 
+                  src={video.videoUrl} 
+                  controls 
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         {/* CTA SECTION */}
         <motion.div 
@@ -176,25 +180,25 @@ export default function TestimonialCard() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-[#0F172A] rounded-[1.5rem] p-6 md:p-8 text-center relative overflow-hidden shadow-[0_15px_60px_rgba(0,128,128,0.15)] border border-white/10 max-w-3xl mx-auto"
+          className="bg-gradient-to-br from-[#008080] via-[#006666] to-[#003333] rounded-[1.5rem] p-6 md:p-8 text-center relative overflow-hidden shadow-[0_15px_60px_rgba(0,128,128,0.25)] border border-white/20 max-w-3xl mx-auto"
         >
           {/* Decorative Mesh Gradient Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(0,128,128,0.35),_transparent_50%),radial-gradient(circle_at_bottom_right,_rgba(248,186,43,0.2),_transparent_50%)] pointer-events-none" />
-          <div className="absolute top-0 left-1/3 w-60 h-60 bg-[#008080]/20 rounded-full blur-[60px] pointer-events-none -top-16 animate-pulse" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.15),_transparent_50%),radial-gradient(circle_at_bottom_right,_rgba(248,186,43,0.2),_transparent_50%)] pointer-events-none" />
+          <div className="absolute top-0 left-1/3 w-60 h-60 bg-white/10 rounded-full blur-[60px] pointer-events-none -top-16 animate-pulse" />
 
           {/* Premium Pill Badge */}
           <div className="relative z-10 mb-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wide shadow-inner">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold tracking-wide shadow-inner">
               ✨ Next-Generation Learning Ecosystem
             </span>
           </div>
 
-          <h3 className="text-2xl md:text-3xl font-extrabold font-heading text-white mb-3 relative z-10 tracking-tight leading-tight">
+          <h3 style={{ color: 'white' }} className="text-2xl md:text-3xl font-extrabold font-heading text-white mb-3 relative z-10 tracking-tight leading-tight">
             Ready to give your child the <br className="hidden sm:inline" /> 
-            <span className="text-[#008080] drop-shadow-sm">Mash Magic Edge?</span>
+            <span style={{ color: 'white' }} className="text-white drop-shadow-sm">Mash Magic Edge?</span>
           </h3>
 
-          <p className="text-white text-sm md:text-base max-w-lg mx-auto mb-6 font-normal leading-relaxed relative z-10">
+          <p className="text-white/90 text-sm md:text-base max-w-lg mx-auto mb-6 font-normal leading-relaxed relative z-10">
             Join thousands of students who have overcome exam fear, mastered their subjects, and achieved outstanding academic success.
           </p>
           
@@ -206,7 +210,7 @@ export default function TestimonialCard() {
               <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
               BOOK A FREE DEMO 🚀
             </button>
-            <button className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 hover:border-white text-white font-bold text-xs md:text-sm uppercase tracking-wider shadow-md hover:scale-105 transition-all duration-300 cursor-pointer">
+            <button className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 hover:border-white text-white font-bold text-xs md:text-sm uppercase tracking-wider shadow-md hover:scale-105 transition-all duration-300 cursor-pointer">
               CONTACT ADMISSIONS 📞
             </button>
           </div>
