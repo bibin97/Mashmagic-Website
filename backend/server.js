@@ -10,6 +10,12 @@ const LMS_BACKEND_URL = process.env.LMS_BACKEND_URL || 'http://localhost:5000/ap
 app.use(cors());
 app.use(express.json());
 
+// Health Check
+app.get('/', (req, res) => {
+    res.send('Mash Magic Backend is running!');
+});
+
+
 // Routes
 const testimonialRoutes = require('./api/testimonials');
 app.use('/api/testimonials', testimonialRoutes);
