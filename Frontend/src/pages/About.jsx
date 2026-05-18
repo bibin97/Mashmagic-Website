@@ -5,13 +5,12 @@ export default function About() {
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
       
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-[#0F172A] text-white">
-        <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-[#008080]/40 to-transparent blur-3xl -z-10" />
+      <section className="relative py-20 overflow-hidden bg-slate-50 text-[#0F172A] border-b border-slate-100">
+        <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-[#008080]/10 to-transparent blur-3xl -z-10" />
         <div className="section-container relative z-10 text-center">
-          <span className="text-[#f8ba2b] font-bold tracking-widest uppercase text-sm mb-4 block">Our Story</span>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">More Than Just <span className="text-[#f8ba2b]">Tuition.</span></h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+          <span className="text-[#008080] font-bold tracking-widest uppercase text-sm mb-4 block">Our Story</span>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">More Than Just <span className="text-[#008080]">Tuition.</span></h1>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
             Mash Magic was born out of a profound realization: traditional tuition centers treat students as numbers. We decided to treat them like family.
           </p>
         </div>
