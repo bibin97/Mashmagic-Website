@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const programs = [
   { img: "/courses/MagicRevision.png", subtitle: "Complete subject revision", link: "https://magic-revision.vercel.app/" },
   { img: "/courses/BrightBridge.png", subtitle: "Skill-building foundation", link: "https://bright-bridge-rho.vercel.app/" },
-  { img: "/courses/classMate.png", subtitle: "Everyday learning support", link: "https://classmate-ashen.vercel.app/" },
+  { img: "/courses/Classmate .png", subtitle: "Everyday learning support", link: "https://classmate-ashen.vercel.app/" },
   { img: "/courses/Crash45.png", subtitle: "Full subject mastery in 45 hours", link: "https://crash45.vercel.app/" },
   { img: "/courses/FinalTouch.png", subtitle: "Last-stage exam prep", link: "https://final-touch-psi.vercel.app/" },
   { img: "/courses/missionX.png", subtitle: "High-performance training", link: "https://mission-x-landing-page.vercel.app/" },
