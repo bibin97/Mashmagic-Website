@@ -151,7 +151,7 @@ export default function TestimonialCard({ showVideos = false }) {
 
         {/* Area 3: Videos */}
         {showVideos && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto mb-16">
             {videoTestimonials.map((video, index) => (
               <motion.div
                 key={video.id}
@@ -159,13 +159,13 @@ export default function TestimonialCard({ showVideos = false }) {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="rounded-[1.5rem] overflow-hidden shadow-md border-4 border-white aspect-video bg-slate-900 relative group"
+                className="rounded-[1.5rem] overflow-hidden shadow-lg border-4 border-white aspect-[9/16] w-full max-w-[300px] bg-black relative group"
               >
                 <video 
                   src={video.videoUrl} 
                   controls 
                   preload="metadata"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 >
                   Your browser does not support the video tag.
                 </video>
