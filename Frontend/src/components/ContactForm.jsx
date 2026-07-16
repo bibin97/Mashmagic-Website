@@ -6,13 +6,9 @@ export default function ContactForm({ onClose = () => {}, isModal = false }) {
     "https://script.google.com/macros/s/AKfycbzu0JKNl0QXFqOud3oVczYhda6pZs84Q1n5cIf9y311E-I1QREmk8WCoHtwjo_IpKiu/exec";
 
   const [formData, setFormData] = useState({
-    parentName: "",
     studentName: "",
-    email: "",
-    phone: "",
     whatsapp: "",
     grade: "",
-    subject: "",
     location: "",
   });
 
@@ -40,13 +36,9 @@ export default function ContactForm({ onClose = () => {}, isModal = false }) {
 
       setSuccess(true);
       setFormData({
-        parentName: "",
         studentName: "",
-        email: "",
-        phone: "",
         whatsapp: "",
         grade: "",
-        subject: "",
         location: "",
       });
       
@@ -88,54 +80,17 @@ export default function ContactForm({ onClose = () => {}, isModal = false }) {
       <div className="p-6">
         {!success ? (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Student Name</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <User size={18} />
-                  </div>
-                  <input
-                    name="studentName"
-                    type="text"
-                    placeholder="Full Name"
-                    value={formData.studentName}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Parent Name</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <Users size={18} />
-                  </div>
-                  <input
-                    name="parentName"
-                    type="text"
-                    placeholder="Guardian Name"
-                    value={formData.parentName}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
-                  />
-                </div>
-              </div>
-            </div>
-
             <div>
-              <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Email Address</label>
+              <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Student Name</label>
               <div className="relative">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  <Mail size={18} />
+                  <User size={18} />
                 </div>
                 <input
-                  name="email"
-                  type="email"
-                  placeholder="example@gmail.com"
-                  value={formData.email}
+                  name="studentName"
+                  type="text"
+                  placeholder="Full Name"
+                  value={formData.studentName}
                   required
                   onChange={handleChange}
                   className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
@@ -143,85 +98,47 @@ export default function ContactForm({ onClose = () => {}, isModal = false }) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Phone Number</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <Phone size={18} />
-                  </div>
-                  <input
-                    name="phone"
-                    type="tel"
-                    placeholder="Call Number"
-                    value={formData.phone}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
-                  />
+            <div>
+              <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">WhatsApp Number</label>
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <MessageSquare size={18} />
                 </div>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">WhatsApp Number</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <MessageSquare size={18} />
-                  </div>
-                  <input
-                    name="whatsapp"
-                    type="tel"
-                    placeholder="WhatsApp Number"
-                    value={formData.whatsapp}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
-                  />
-                </div>
+                <input
+                  name="whatsapp"
+                  type="tel"
+                  placeholder="WhatsApp Number"
+                  value={formData.whatsapp}
+                  required
+                  onChange={handleChange}
+                  className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
+                />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Grade / Class</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <GraduationCap size={18} />
-                  </div>
-                  <select
-                    name="grade"
-                    value={formData.grade}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all font-medium text-slate-900 text-sm shadow-sm appearance-none"
-                    style={{ backgroundImage: 'none' }}
-                  >
-                    <option value="">Select Grade</option>
-                    <option value="below-8">Below 8th</option>
-                    <option value="8th">8th Grade</option>
-                    <option value="9th">9th Grade</option>
-                    <option value="10th">10th Grade</option>
-                    <option value="11th">11th Grade</option>
-                    <option value="12th">12th Grade</option>
-                    <option value="repeater">Repeater / Drop</option>
-                  </select>
+            <div>
+              <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Grade / Class</label>
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <GraduationCap size={18} />
                 </div>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-900 mb-1.5 uppercase tracking-wide">Interested Course</label>
-                <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                    <BookOpen size={18} />
-                  </div>
-                  <input
-                    name="subject"
-                    type="text"
-                    placeholder="e.g. NEET, JEE"
-                    value={formData.subject}
-                    required
-                    onChange={handleChange}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all placeholder:text-slate-400 font-medium text-slate-900 text-sm shadow-sm"
-                  />
-                </div>
+                <select
+                  name="grade"
+                  value={formData.grade}
+                  required
+                  onChange={handleChange}
+                  className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all font-medium text-slate-900 text-sm shadow-sm appearance-none"
+                  style={{ backgroundImage: 'none' }}
+                >
+                  <option value="">Select Grade</option>
+                  <option value="below-8">Below 8th</option>
+                  <option value="8th">8th Grade</option>
+                  <option value="9th">9th Grade</option>
+                  <option value="10th">10th Grade</option>
+                  <option value="11th">11th Grade</option>
+                  <option value="12th">12th Grade</option>
+                  <option value="repeater">Repeater / Drop</option>
+                </select>
               </div>
             </div>
 
