@@ -19,9 +19,9 @@ export default function ContactModal() {
 
       {/* Modal */}
       {open && (
-        <div className="fixed inset-0 bg-black/40 z-[99999] flex justify-center items-center p-4">
-          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6">
-            <ContactForm onClose={() => setOpen(false)} />
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[99999] flex justify-center items-center p-4">
+          <div className="w-full max-w-lg shadow-2xl rounded-3xl overflow-hidden">
+            <ContactForm onClose={() => setOpen(false)} isModal={true} />
           </div>
         </div>
       )}

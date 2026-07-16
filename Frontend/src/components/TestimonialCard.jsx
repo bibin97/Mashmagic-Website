@@ -9,13 +9,13 @@ const testimonials = [
     text: "The classes are excellent, especially since I had difficulty in Mathematics. The teachers are amazing, and they took great care of my child.",
     author: "Alphin Shibu",
     position: "Grade 9th STATE | Kerala",
-    img: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&q=80&w=400&h=400",
+    img: "/images/alphin_shibu.jpg",
   },
   {
     text: "As I complete my final course with Mash Magic Revision, I want to express my gratitude. The discipline helped me gain real confidence for my boards.",
     author: "Bezal Sanoj",
     position: "+2 CBSE | Qatar",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400&h=400",
+    img: "/images/bezal_sanoj.jpg",
   },
   {
     text: "All your faculty are very good, supportive and co-operative. Thank you so much for allotting such good teachers and mentor. Thank you Mash Magic.",
