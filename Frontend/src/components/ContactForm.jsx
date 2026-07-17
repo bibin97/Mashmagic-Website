@@ -22,7 +22,11 @@ export default function ContactForm({ onClose = () => {}, isModal = false }) {
     try {
       const params = new URLSearchParams();
       for (const key in formData) {
-        params.append(key, formData[key]);
+        if (key === 'whatsapp') {
+          params.append('whatsapp number', formData[key]);
+        } else {
+          params.append(key, formData[key]);
+        }
       }
 
       await fetch(scriptURL, {
