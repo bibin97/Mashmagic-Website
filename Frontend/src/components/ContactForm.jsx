@@ -3,7 +3,7 @@ import { X, User, Users, Mail, Phone, MessageSquare, GraduationCap, BookOpen, Ma
 
 export default function ContactForm({ onClose = () => {}, isModal = false }) {
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzu0JKNl0QXFqOud3oVczYhda6pZs84Q1n5cIf9y311E-I1QREmk8WCoHtwjo_IpKiu/exec";
+    "https://script.google.com/macros/s/AKfycbxPLQ81TmmQF3JH2w65egeBMCFIg8caCGoSrk-XQh1lnC9CxnCWkfD3Bl0NOI_LfuRC/exec";
 
   const [formData, setFormData] = useState({
     studentName: "",
